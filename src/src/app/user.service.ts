@@ -13,7 +13,7 @@ export class UserService implements Publisher {
   constructor() {
     this.Clients = [];
     let BasicDetail: basicDetails = {Username:"Thamizhpriyan",Password:"..",
-     FirstName: "Thamizh", LastName: "vanan",Email:"jasper@rex.com" };
+     FirstName: "Thamizh", LastName: "vanan",Email:"jasper@gmail.com" };
     let Address: address = { Pincode: 560066 };
     this.user = { BasicDetail:BasicDetail, Address: Address, Gender: "Male",};
     console.log("Inside Service" + JSON.stringify(this.user));
