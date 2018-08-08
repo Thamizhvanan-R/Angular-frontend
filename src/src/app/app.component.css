@@ -1,0 +1,8 @@
+#Content {
+  padding-bottom: 70px;
+}
+@media (max-width: 979px) {
+  #Content {
+    padding-bottom: 70px;
+  }
+}

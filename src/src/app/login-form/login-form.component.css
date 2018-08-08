@@ -1,0 +1,11 @@
+.ng-pristine.ng-invalid.ng-untouched[required]:not(form):not(formArrayName){
+  border-left: 5px solid #FFFF00;
+}
+
+.ng-valid[required]:not(form):not(formArrayName){
+  border-left: 5px solid #42A948;
+} 
+
+.ng-invalid[required]:not(form):not(formArrayName){
+  border-left: 5px solid #a94442;
+}

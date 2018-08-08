@@ -1,0 +1,39 @@
+
+.ng-pristine.ng-invalid.ng-untouched[required]:not(form):not(formArrayName){
+  border-left: 5px solid #FFFF00;
+}
+
+.ng-valid[required]:not(form):not(formArrayName){
+  border-left: 5px solid #42A948;
+} 
+
+.ng-invalid[required]:not(form):not(formArrayName){
+  border-left: 5px solid #a94442;
+}
+
+.invalid-pass{
+  font-family : cursive;
+  color:red;
+  text-decoration: line-through;
+  font-size:.4cm;
+}
+
+.valid-pass{
+  font-family : cursive;
+  color:green;
+  font-size:.4cm;
+}
+
+div.valid-pass:after{
+  content:'\2714';
+  display:inline-block;
+  color:green;
+  padding:0 6px 0 0;
+}
+
+.invalid-pass:after{
+  content:'\2718';
+  display:inline-block;
+  color:red;
+  padding:0 6px 0 0;
+}

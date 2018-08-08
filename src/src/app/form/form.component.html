@@ -1,0 +1,56 @@
+<div class="container ">
+	<form class="form-horizontal" [formGroup]="form1">
+		<div class="form-group">
+			<label class="font-weight-normal" for="Name">Name</label>
+			<div formGroupName="Name" class="input-group" id="Name">
+				<input id="Firstname" class="form-control" type="text" formControlName="FirstName" required placeholder="First Name" />
+				<input id="Lastname" class="form-control" type="text" formControlName="LastName" placeholder="Last Name" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="font-weight-normal" for="email">Email</label>
+			<input id="email" class="form-control" type="email" [pattern]="emailpattern" formControlName="Email" required placeholder="Enter email"
+			/>
+		</div>
+		<div class="form-group">
+			<label class="font-weight-normal" for="password">Password</label>
+			<input id="password" class="form-control" type="Password" formControlName="Password" required (focus)="toggleassist(true)"
+			 (blur)="toggleassist(false)" placeholder="Password" />
+			<div *ngIf="assistval()">
+				<div *ngFor="let msg of passwordErrorMsg" [ngClass]="getCssClass(form1.getError(msg.Error,['Password']))">
+					{{msg.Message}}
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="font-weight-normal" for="gender">Gender</label>
+			<select id="gender" class="form-control" type="text" formControlName="Gender" (change)="GenderChange($event)" required>
+        <option *ngFor="let gend of Genders" [value]="gend">{{gend}}</option>
+      </select>
+		</div>
+		<div class="form-group">
+			<label class="font-weight-normal" for="phone">Phone</label>
+			<input id="phone" class="form-control" type="text" formControlName="Phone" required/>
+		</div>
+		<label class="font-weight-normal">Address </label>
+		<div formGroupName="Address" class="container  py-2 border-top border-muted">
+			<div class="form-group">
+				<label class="font-weight-normal" for="door">DoorNo</label>
+				<input id="door" class="form-control" type="text" formControlName="Door" />
+			</div>
+			<div class="form-group">
+				<label class="font-weight-normal" for="street">Street</label>
+				<input id="street" class="form-control" type="text" formControlName="Street" />
+			</div>
+			<div class="form-group">
+				<label class="font-weight-normal" for="city">City</label>
+				<input id="city" class="form-control" type="text" formControlName="City" />
+			</div>
+			<div class="form-group">
+				<label class="font-weight-normal" for="pincode">Pincode</label>
+				<input id="pincode" class="form-control" type="text" [pattern]="pinpattern" formControlName="Pincode" required />
+			</div>
+		</div>
+		<button class="btn btn-primary" type="submit" (click)="Submit()">Submit</button>
+	</form>
+</div>
